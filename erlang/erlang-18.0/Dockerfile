@@ -4,7 +4,7 @@ ENV OTP_VERSION=18.0 LANG=C.UTF-8
 
 RUN apt-get update \
     && apt-get install -y wget unixodbc-dev build-essential autoconf m4 libncurses5-dev \
-    && wget "https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz" --output-document=otp-src.tar.gz \
+    && wget "https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz" --quiet --output-document=otp-src.tar.gz \
     && mkdir -p /usr/src/otp-src \
     && tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 \
     && rm otp-src.tar.gz \
